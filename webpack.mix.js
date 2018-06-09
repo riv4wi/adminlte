@@ -15,9 +15,9 @@ let mix = require('laravel-mix');
 //    .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.js([
-        // 'node_modules/jquery/src/jquery.js',
-        // 'resources/assets/js/bootstrap.bundle.js',
-        // 'resources/assets/js/adminlte.min.js',
+        'node_modules/jquery/src/jquery.js',
+        'resources/assets/js/bootstrap.bundle.min.js',
+        'resources/assets/js/adminlte.min.js',
         'resources/assets/js/app.js'
     ],
     'public/js/app.js' )
