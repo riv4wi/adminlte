@@ -61,10 +61,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request)
     {
-        dd($request->all());
-        //        Category::updated($request->all());
-//        return back();
-    }
+        $category=Category::findOrFail($request->category_id);
+        $category->update($request->all());
+        return back();
+   }
 
     /**
      * Remove the specified resource from storage.

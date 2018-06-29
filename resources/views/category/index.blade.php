@@ -22,27 +22,36 @@
                         <tr>
                             <td>{{$cat->title}}</td>
                             <td>{{$cat->description}}</td>
-                            <td><button class="btn btn-info btn-sm" data-toggle="modal" data-target="#EditModal">Edit</button></td>
+                            <td>
+                                <button class="btn btn-info btn-sm" data-toggle="modal" data-category_id="{{$cat->id}}"
+                                        data-mytitle="{{$cat->title}}" data-mydescription="{{$cat->description}}"
+                                        data-target="#EditModal">Edit
+                                </button>Delete
+                            </td>
                         </tr>
                     @endforeach
                 </table>
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
                     Add category
                 </button>
 
                 <!-- Modal Add -->
                 @component('component.modalCategory', [
-                    'idModal'=>'exampleModal',
-                    'title'=>'Categories',
+                    'idModal'=>'addModal',
+                    'title'=>'Add category',
+                    'form_action'=>'category.store',
+                    'method'=> 'post',
                     'msg' => 'You are adding a category!'])
                 @endcomponent
 
                 <!-- Modal Edit -->
                 @component('component.modalCategory', [
                     'idModal'=>'EditModal',
-                    'title'=>'Categories',
+                    'title'=>'Edit category',
+                    'form_action'=>'category.update',
+                    'method'=> 'post',
                     'msg' => 'You are editing a category!'])
                 @endcomponent
 
