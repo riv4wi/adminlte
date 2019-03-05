@@ -46,6 +46,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- REQUIRED SCRIPTS -->
     <script src="{{asset('js/app.js')}}"></script>
+    <script>
+        $('#EditModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var title = button.data('mytitle') // Extract info from data-* attributes
+            var description = button.data('mydescription') // Extract info from data-* attributes
+            var category_id = button.data('category_id') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-body #title').val(title);
+            modal.find('.modal-body #description').val(description);
+            modal.find('.modal-body #category_id').val(category_id);
+        });
+
+        $('#DeleteModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var title = button.data('mytitle') // Extract info from data-* attributes
+            var description = button.data('mydescription') // Extract info from data-* attributes
+            var category_id = button.data('category_id') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-body #title').val(title);
+            modal.find('.modal-body #description').val(description);
+            modal.find('.modal-body #category_id').val(category_id);
+        })
+    </script>
 </body>
 </html>
 

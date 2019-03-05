@@ -38,7 +38,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -59,10 +59,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
-    }
+        $category=Category::findOrFail($request->category_id);
+        $category->update($request->all());
+        return back();
+   }
 
     /**
      * Remove the specified resource from storage.
@@ -72,6 +74,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        echo "Deleted data";
     }
 }
