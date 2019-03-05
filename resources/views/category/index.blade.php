@@ -26,7 +26,11 @@
                                 <button class="btn btn-info btn-sm" data-toggle="modal" data-category_id="{{$cat->id}}"
                                         data-mytitle="{{$cat->title}}" data-mydescription="{{$cat->description}}"
                                         data-target="#EditModal">Edit
-                                </button>Delete
+                                </button>
+                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-category_id="{{$cat->id}}"
+                                        data-mytitle="{{$cat->title}}" data-mydescription="{{$cat->description}}"
+                                        data-target="#DeleteModal">Delete
+                                </button>
                             </td>
                         </tr>
                     @endforeach
@@ -53,6 +57,15 @@
                     'form_action'=>'category.update',
                     'method'=> 'post',
                     'msg' => 'You are editing a category!'])
+                @endcomponent
+
+                <!-- Modal Delete -->
+                @component('component.modalCategory', [
+                    'idModal'=>'DeleteModal',
+                    'title'=>'Delete category',
+                    'form_action'=>'category.destroy',
+                    'method'=> 'post',
+                    'msg' => 'You are deleting a category!'])
                 @endcomponent
 
                 {{--</div><!-- /.col-md-6 -->--}}

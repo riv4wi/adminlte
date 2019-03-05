@@ -20,6 +20,11 @@
                     <form action="{{route($form_action, 'test')}}" id="formModal" method="{{$method}}">
                         {{method_field('patch')}}
                 @endif
+                @if ($form_action == 'category.destroy')
+                    <form action="{{route($form_action, 'test')}}" id="formModal" method="{{$method}}">
+                        {{--{{method_field('delete')}}--}}
+                @endif
+
                     {{csrf_field()}}
                     <input type="hidden" name="category_id" id="category_id" value="">
                     <div class="form-group">

@@ -74,6 +74,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        echo "Deleted data";
     }
 }
