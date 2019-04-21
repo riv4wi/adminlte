@@ -17,7 +17,11 @@
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
+<<<<<<< Updated upstream
         "popper.js": "^1.12"
+=======
+        "vue": "^2.5.7"
+>>>>>>> Stashed changes
     },
     "dependencies": {
         "admin-lte": "^3.0.0-alpha.2"
